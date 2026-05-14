@@ -1,0 +1,61 @@
+[workspace]
+resolver = "2"
+members = [
+    "bootloader",
+    "kernel",
+    "drivers",
+    "filesystems",
+    "networking",
+    "graphics",
+    "userspace",
+    "shell",
+    "apps",
+    "libs",
+    "pkg",
+    "tests",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["AuroraOS Team"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/auroraos/auroraos"
+
+[workspace.dependencies]
+# Core dependencies
+spin = "0.9"
+lazy_static = { version = "1.4", features = ["spin_no_std"] }
+bitflags = "2.4"
+log = "0.4"
+
+# Userspace dependencies
+serde = { version = "1.0", default-features = false, features = ["derive"] }
+serde_json = { version = "1.0", default-features = false }
+toml = { version = "0.8", default-features = false }
+
+# Graphics dependencies (use specific versions, not workspace)
+# Note: skia-safe and wgpu cannot be workspace deps when used optionally
+
+# Networking dependencies
+smoltcp = { version = "0.11", default-features = false }
+
+# Async runtime (for userspace)
+tokio = { version = "1.35", features = ["rt", "sync", "macros"] }
+async-trait = "0.1"
+
+# Crypto/TLS
+rustls = { version = "0.21", default-features = false }
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
+codegen-units = 1
+
+[profile.kernel]
+inherits = "release"
+debug = true
+debug-assertions = true

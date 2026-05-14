@@ -1,0 +1,14 @@
+[package]
+name = "aurora_tests"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[dev-dependencies]
+aurora_kernel = { path = "../kernel" }
+aurora_drivers = { path = "../drivers" }
+aurora_filesystems = { path = "../filesystems" }

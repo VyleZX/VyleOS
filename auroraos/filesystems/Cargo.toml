@@ -1,0 +1,24 @@
+[package]
+name = "aurora_filesystems"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["staticlib"]
+path = "src/lib.rs"
+
+[dependencies]
+spin.workspace = true
+lazy_static.workspace = true
+bitflags.workspace = true
+log.workspace = true
+
+# Filesystem implementations
+fatfs = { version = "0.3", default-features = false, features = ["alloc"] }
+
+[features]
+default = []
+ext4_support = []
+ntfs_support = []
