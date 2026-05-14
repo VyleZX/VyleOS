@@ -1,0 +1,21 @@
+[package]
+name = "aurora_bootloader"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+uefi = "0.24"
+uefi-services = "0.21"
+log = { workspace = true }
+spin = { workspace = true }
+bitflags = { workspace = true }
+
+[lib]
+crate-type = ["staticlib"]
+path = "src/lib.rs"
+
+[[bin]]
+name = "bootloader"
+path = "src/main.rs"

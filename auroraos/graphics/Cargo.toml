@@ -1,0 +1,27 @@
+[package]
+name = "aurora_graphics"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["staticlib"]
+path = "src/lib.rs"
+
+[dependencies]
+spin.workspace = true
+lazy_static.workspace = true
+bitflags.workspace = true
+log.workspace = true
+
+# GPU rendering (userspace only)
+wgpu = { workspace = true, optional = true }
+
+# 2D rendering
+skia-safe = { workspace = true, optional = true }
+
+[features]
+default = []
+gpu_accel = ["dep:wgpu"]
+software_render = ["dep:skia-safe"]

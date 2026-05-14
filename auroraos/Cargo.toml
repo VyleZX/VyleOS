@@ -34,9 +34,9 @@ serde = { version = "1.0", default-features = false, features = ["derive"] }
 serde_json = { version = "1.0", default-features = false }
 toml = { version = "0.8", default-features = false }
 
-# Graphics dependencies
-skia-safe = { version = "0.70", optional = true }
-wgpu = { version = "0.18", optional = true }
+# Graphics dependencies (optionality handled in individual crates)
+skia-safe = "0.70"
+wgpu = "0.18"
 
 # Networking dependencies
 smoltcp = { version = "0.11", default-features = false }

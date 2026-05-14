@@ -1,0 +1,17 @@
+[package]
+name = "aurora_shell"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "aurora_shell"
+path = "src/main.rs"
+
+[dependencies]
+aurora_userspace = { path = "../userspace" }
+serde.workspace = true
+serde_json.workspace = true
+log.workspace = true
+tokio.workspace = true

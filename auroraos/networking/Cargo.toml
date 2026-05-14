@@ -1,0 +1,26 @@
+[package]
+name = "aurora_networking"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["staticlib"]
+path = "src/lib.rs"
+
+[dependencies]
+spin.workspace = true
+lazy_static.workspace = true
+bitflags.workspace = true
+log.workspace = true
+smoltcp.workspace = true
+
+[features]
+default = ["ipv4"]
+ipv4 = []
+ipv6 = []
+tcp = []
+udp = []
+dhcp = []
+dns = []

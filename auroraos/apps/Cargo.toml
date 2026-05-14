@@ -1,0 +1,28 @@
+[package]
+name = "aurora_apps"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "file_manager"
+path = "src/file_manager.rs"
+
+[[bin]]
+name = "terminal"
+path = "src/terminal.rs"
+
+[[bin]]
+name = "settings"
+path = "src/settings.rs"
+
+[dependencies]
+aurora_userspace = { path = "../userspace" }
+aurora_graphics = { path = "../graphics" }
+serde.workspace = true
+serde_json.workspace = true
+log.workspace = true

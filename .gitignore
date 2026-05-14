@@ -1,48 +1,48 @@
 ```
-# Compiled and build artifacts
-*.o
-*.obj
-*.a
-*.lib
-*.dll
-*.so
-*.dylib
-*.exe
-*.out
-
-# Rust-specific
+# Rust/Cargo
 target/
 Cargo.lock
 **/*.rs.bk
 
 # Dependencies
-**/vendor/
-**/deps/
+**/node_modules/
+**/.venv/
+**/venv/
+**/.mypy_cache/
+**/.pytest_cache/
+**/.gradle/
 
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-*.swo
-
-# Editors
-.vscode/
-.idea/
-*.swp
-*~
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# Build system
+# Build artifacts
 **/build/
 **/dist/
-**/bin/
-**/obj/
+**/target/
+
+# IDE/Editor files
+.vscode/
+.idea/
+**/*.swp
+**/*.swo
+**/*.tmp
+
+# Logs
+**/*.log
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Environment
+.env
+.env.local
+.env.*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Cache directories
+**/__pycache__/
+**/.rmeta
+**/.rlib
 ```
