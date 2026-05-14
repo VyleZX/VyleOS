@@ -1,0 +1,48 @@
+```
+# Compiled and build artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+*.exe
+*.out
+
+# Rust-specific
+target/
+Cargo.lock
+**/*.rs.bk
+
+# Dependencies
+**/vendor/
+**/deps/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Build system
+**/build/
+**/dist/
+**/bin/
+**/obj/
+```

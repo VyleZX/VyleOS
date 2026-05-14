@@ -1,0 +1,36 @@
+[package]
+name = "aurora_kernel"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[lib]
+crate-type = ["staticlib"]
+name = "aurora_kernel"
+
+[[bin]]
+name = "aurora_kernel"
+path = "src/main.rs"
+
+[dependencies]
+# Core dependencies
+spin.workspace = true
+lazy_static.workspace = true
+bitflags.workspace = true
+log.workspace = true
+
+# Architecture-specific
+x86_64 = { version = "0.14", default-features = false }
+bootloader = { version = "0.11", default-features = false, features = ["map_phys_mem"] }
+
+# Optional: for ACPI parsing
+acpi = { version = "4.1", optional = true }
+
+[build-dependencies]
+cc = "1.0"
+
+[features]
+default = ["acpi_support"]
+acpi_support = ["dep:acpi"]
+debug = []
