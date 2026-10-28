@@ -1,0 +1,47 @@
+```
+# Rust/Cargo specific
+target/
+Cargo.lock
+**/*.rs.bk
+
+# Dependencies
+**/node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.local
+*.env.*
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+**/build/
+**/dist/
+**/target/
+
+# Python related (if any Python tools used in dev)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+```

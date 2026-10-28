@@ -1,0 +1,32 @@
+[package]
+name = "aurora-kernel"
+version = "0.1.0"
+edition = "2024"
+authors = ["Aurora OS Team"]
+description = "Aurora OS Kernel - A modern Rust-based operating system kernel"
+license = "MIT"
+
+[lib]
+crate-type = ["staticlib"]
+name = "aurora_kernel"
+
+[dependencies]
+spin = "0.9"
+lazy_static = { version = "1.4", features = ["spin_no_std"] }
+x86_64 = { version = "0.15", default-features = false, features = ["instructions", "external_asm"] }
+bootloader = "0.10"
+volatile = "0.4"
+zero = "0.1"
+bitflags = "2.4"
+log = "0.4"
+
+[dev-dependencies]
+ctor = "0.2"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+lto = true
+opt-level = "s"
